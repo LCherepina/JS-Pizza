@@ -14,59 +14,148 @@
 
 
 </head>
-<body>
-<div id="cart"></div>
+<body >
+
+
+<div class="discount-panel">
+    <div class="discount-before">
+    </div>
+    <div class="discount-title">
+        Цього тижня<br> на все
+    </div>
+    <div class="discount-text">
+        -20%
+    </div>
+    <img class="discount" src="assets/images/discount.svg">
+</div>
+
 <div class="container">
-    <div class="row" id="pizza_list">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
+    <div class="row">
+        <div class="navbar navbar-fixed-top top-panel" >
 
-                <div class="caption"><h3>Thumbnail label</h3>
+            <div class="site-icon">
+                <div class="discount-before top-discount">
+                </div>
+                <a class="pizza-logo"  href="/index.html">
 
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <div id="pizza-title2" class="title-1">
+                        Pizza
+                    </div>
+                    <div class="title-2">
+                        KMA
+                    </div>
 
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default">Button 1</a>
-                    </p>
+                </a>
+                <img class="discount" src="assets/images/discount.svg">
+            </div>
+
+            <div class="header-top-row">
+
+                <div class="main-header-top-items">
+                    <div class="main-header-top-item phone-number visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
+                        (044) 222 5 222
+                    </div>
+                    <div class="main-header-top-item work-days visible-lg-inline-block visible-md-inline-block">
+                        24 години/ 7 днів на тиждень
+                    </div>
+                    <div class="main-header-top-item delivery visible-lg-inline-block">
+                        Безкоштовна доставка піци
+                    </div>
+                    <div type="button" class="main-header-top-item btn btn-warning sign-in-button">
+                        Ввійти
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_2.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 3</a>
-                        <a href="#" class="btn btn-default">Button 4</a>
-                    </p>
-                </div>
+            <div class="header-down-row">
+                <span class=" pizza-page" style="color:white;">
+                    <a href="/index.html" style="color:white;" class="hidden-xs">Піца</a> &nbsp;
+                </span>
             </div>
         </div>
+        <div class="left-panel">
+            <div class="page-title">
+                <h2>
+                    <span class="count-tile">Усі піци</span>
+                    <span class="badge orange pizza-count">0</span>
+                </h2>
+            </div>
+            <div class="all-pizza-type-wrap">
+                <ul class="nav nav-pills all-pizza-type">
+                    <li role="presentation" class="active pizza-filter-button" id="filter-button-all-pizza">
+                        <a href="#">
+                            Усі
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button"  id="filter-button-meat">
+                        <a href="#" >
+                            Мясні
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="filter-button-pineapples">
+                        <a href="#">
+                            З ананасами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="filter-button-mushrooms">
+                        <a href="#">
+                            З грибами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="filter-button-ocean">
+                        <a href="#">
+                            З морепродуктами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="filter-button-tomato">
+                        <a href="#">
+                            Вега
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" id="pizza_list">
+               
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_3.jpg">
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="r1">
+                <span class="order-list-title">
+                    Замовлення
+                    <span class="badge orange orders-count-span">0</span>
+                </span>
 
-                <div class="caption"><h3>Thumbnail label</h3>
+                <span class="clear-order-wrap clear-order">
+                    Очистити замовлення
+                </span>
 
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+            <div class="all-orders r2">
+                <div id="cart">
 
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 5</a>
-                        <a href="#" class="btn btn-default">Button 6</a>
-                    </p>
                 </div>
+            </div>
+
+            <div class="order-state r3">
+                <span class="sum-title">
+                    Сума замовлення
+                </span>
+                <span class="sum-number">
+                </span>
+                <!--<div class="do-order-button">-->
+
+                    <button type="button" class="btn btn-warning btn-lg btn-block button-order" disabled="disabled">
+                        Замовити
+                    </button>
+
+                <!--</div>-->
             </div>
         </div>
     </div>
+
 </div>
+
 
 <!-- jQuery JavaScript -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
@@ -75,6 +164,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Own JavaScript -->
-<!--<script type="text/javascript"  src="assets/js/main.js"> </script>-->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
 </body>
 </html>
