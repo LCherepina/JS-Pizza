@@ -59,6 +59,11 @@ function removeFromCart(cart_item) {
     //Після видалення оновити відображення
     updateCart();
 }
+function clearCart(){
+    Cart = [] ;
+
+    updateCart();
+}
 
 
 function initialiseCart() {
@@ -85,9 +90,16 @@ function updateCart() {
     //Очищаємо старі піци в кошику
     $cart.html("");
 
+    var total =0;
+    var amount = ;
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
+
+        var pizza = cart_item.pizza;
+        var size = cart_item.size;
+
+        total += pizza[size].price*cart_item.quantity;
 
         var $node = $(html_code);
 
@@ -117,7 +129,7 @@ function updateCart() {
     }
 
     Cart.forEach(showOnePizzaInCart);
-
+    $(".sum-number").text(total + " грн");
 }
 
 exports.removeFromCart = removeFromCart;
@@ -125,5 +137,7 @@ exports.addToCart = addToCart;
 
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
+
+exports.clearCart = clearCart;
 
 exports.PizzaSize = PizzaSize;

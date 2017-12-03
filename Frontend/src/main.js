@@ -8,7 +8,7 @@ $(function(){
     var PizzaCart = require('./pizza/PizzaCart');
     var Pizza_List = require('./Pizza_List');
 
-    $(".clear-order").click(function(){
+    $(".clear-cart").click(function(){
         PizzaCart.clearCart();
     });
 
