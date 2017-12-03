@@ -18,8 +18,6 @@
 
 
 <div class="discount-panel">
-    <div class="discount-before">
-    </div>
     <div class="discount-title">
         Цього тижня<br> на все
     </div>
@@ -36,7 +34,7 @@
             <div class="site-icon">
                 <div class="discount-before top-discount">
                 </div>
-                <a class="pizza-logo"  href="/index.html">
+                <a class="pizza-logo"  href="#">
 
                     <div id="pizza-title2" class="title-1">
                         Pizza
@@ -77,37 +75,37 @@
             <div class="page-title">
                 <h2>
                     <span class="count-tile">Усі піци</span>
-                    <span class="badge orange pizza-count">0</span>
+                    <span class="badge orange pizza-count">8</span>
                 </h2>
             </div>
             <div class="all-pizza-type-wrap">
                 <ul class="nav nav-pills all-pizza-type">
-                    <li role="presentation" class="active pizza-filter-button" id="filter-button-all-pizza">
+                    <li role="presentation" class="active pizza-filter-button" id="all-pizza">
                         <a href="#">
                             Усі
                         </a>
                     </li>
-                    <li role="presentation" class="pizza-filter-button"  id="filter-button-meat">
-                        <a href="#" >
+                    <li role="presentation" class="pizza-filter-button"  id="meat-pizza">
+                        <a href="#">
                             Мясні
                         </a>
                     </li>
-                    <li role="presentation" class="pizza-filter-button" id="filter-button-pineapples">
+                    <li role="presentation" class="pizza-filter-button" id="pineapples-pizza">
                         <a href="#">
                             З ананасами
                         </a>
                     </li>
-                    <li role="presentation" class="pizza-filter-button" id="filter-button-mushrooms">
+                    <li role="presentation" class="pizza-filter-button" id="mushrooms-pizza">
                         <a href="#">
                             З грибами
                         </a>
                     </li>
-                    <li role="presentation" class="pizza-filter-button" id="filter-button-ocean">
+                    <li role="presentation" class="pizza-filter-button" id="ocean-pizza">
                         <a href="#">
                             З морепродуктами
                         </a>
                     </li>
-                    <li role="presentation" class="pizza-filter-button" id="filter-button-tomato">
+                    <li role="presentation" class="pizza-filter-button" id="tomato-pizza">
                         <a href="#">
                             Вега
                         </a>
@@ -115,7 +113,7 @@
                 </ul>
             </div>
             <div class="row" id="pizza_list">
-               
+
 
             </div>
         </div>
@@ -125,11 +123,8 @@
                     Замовлення
                     <span class="badge orange orders-count-span">0</span>
                 </span>
-
-                <span class="clear-order-wrap clear-order">
-                    Очистити замовлення
-                </span>
-
+                <!--<button class="btn btn-default clear-order"> Очистити замовлення</button>-->
+                <span class="clear-order">Очистити замовлення</span>
             </div>
             <div class="all-orders r2">
                 <div id="cart">
@@ -139,17 +134,17 @@
 
             <div class="order-state r3">
                 <span class="sum-title">
-                    Сума замовлення
-                </span>
-                <span class="sum-number">
-                </span>
-                <!--<div class="do-order-button">-->
-
-                    <button type="button" class="btn btn-warning btn-lg btn-block button-order" disabled="disabled">
+                        Сума замовлення
+                    </span>
+                <span class="sum-number"> грн </span>
+                <div class="do-order-button">
+                    <!--disabled="disabled"-->
+                    <!--<a class="btn btn-warning btn-lg btn block button-order" role="button">-->
+                    <button class="btn btn-warning btn-lg btn-block button-order" >
                         Замовити
                     </button>
-
-                <!--</div>-->
+                    <!--</a>-->
+                </div>
             </div>
         </div>
     </div>

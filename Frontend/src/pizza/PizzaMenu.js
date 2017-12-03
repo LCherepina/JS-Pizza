@@ -30,21 +30,79 @@ function showPizzaList(list) {
 
     list.forEach(showOnePizza);
 }
+var pizzaFilter={
+  all: "all-pizza",
+  meat: "meat-pizza",
+  pineApple: "pineapples-pizza",
+  mushrooms: "mushrooms-pizza",
+  ocean: "ocean-pizza",
+  vega: "tomato-pizza"
+};
 
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
+
     var pizza_shown = [];
+    if(filter=== pizzaFilter.all) {
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content){
+                pizza_shown.push(pizza);
+            }
+        });
 
-    Pizza_List.forEach(function(pizza){
-        //Якщо піка відповідає фільтру
-        //pizza_shown.push(pizza);
+        $(".pizza-count").text("8");
+    }
 
-        //TODO: зробити фільтри
-    });
 
-    //Показати відфільтровані піци
+
+    if(filter=== pizzaFilter.meat){
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content.meat){
+                pizza_shown.push(pizza);
+            }
+        });
+
+    }
+    if(filter=== pizzaFilter.pineApple){
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content.pineapple){
+                pizza_shown.push(pizza);
+            }
+        });
+    }
+    if(filter=== pizzaFilter.mushrooms){
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content.mushroom){
+                pizza_shown.push(pizza);
+            }
+        });
+    }
+    if(filter=== pizzaFilter.ocean){
+        Pizza_List.forEach(function(pizza){
+            if(pizza.content.ocean){
+                pizza_shown.push(pizza);
+            }
+        });
+    }
+    if(filter=== pizzaFilter.vega){
+        Pizza_List.forEach(function(pizza){
+            if(!pizza.content.meat && !pizza.content.ocean){
+                pizza_shown.push(pizza);
+            }
+        });
+    }
     showPizzaList(pizza_shown);
+    $(".pizza-count").text(pizza_shown.length);
+
 }
+$(".nav-pills li").on("click", function(){
+    $(".nav-pills").find(".active").removeClass("active");
+    $(this).addClass("active");
+
+    var filter = this.id;
+    filterPizza(filter);
+});
+
 
 function initialiseMenu() {
     //Показуємо усі піци
