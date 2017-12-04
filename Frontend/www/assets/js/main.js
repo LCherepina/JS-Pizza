@@ -288,9 +288,10 @@ function initialiseCart() {
     //TODO: ...
 
     var saved_cart = Storage.read("cart");
-    if(saved_cart){
-        Cart=saved_cart;
+    if(saved_cart) {
+        Cart = saved_cart;
     }
+
     updateCart();
 }
 
@@ -307,7 +308,9 @@ function updateCart() {
     $cart.html("");
 
     var total =0;
+    var amount = Cart.length;
     //Онволення однієї піци
+
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
 
@@ -315,6 +318,7 @@ function updateCart() {
         var size = cart_item.size;
 
         total += pizza[size].price*cart_item.quantity;
+
         var $node = $(html_code);
 
         $node.find(".plus").click(function(){
@@ -343,7 +347,12 @@ function updateCart() {
     }
 
     Cart.forEach(showOnePizzaInCart);
+
+    // if(Cart.length=0){
+    //     $(".back-badge").text("Пусто в холодильнику?Замовте піцу!");
+    // }
     $(".sum-number").text(total + " грн");
+    $(".orders-count-span").text(amount);
 }
 
 exports.removeFromCart = removeFromCart;
@@ -409,6 +418,7 @@ function filterPizza(filter) {
         });
 
         $(".pizza-count").text("8");
+        $(".count-tile").text("Усі піци");
     }
 
 
@@ -419,6 +429,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("М'ясні піци");
 
     }
     if(filter=== pizzaFilter.pineApple){
@@ -427,6 +438,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з ананасами");
     }
     if(filter=== pizzaFilter.mushrooms){
         Pizza_List.forEach(function(pizza){
@@ -434,6 +446,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з грибами");
     }
     if(filter=== pizzaFilter.ocean){
         Pizza_List.forEach(function(pizza){
@@ -441,6 +454,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з морепродуктами");
     }
     if(filter=== pizzaFilter.vega){
         Pizza_List.forEach(function(pizza){
@@ -448,6 +462,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Вегетеріанські піци");
     }
     showPizzaList(pizza_shown);
     $(".pizza-count").text(pizza_shown.length);

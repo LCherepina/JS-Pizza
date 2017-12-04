@@ -3,7 +3,11 @@
  */
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
-var Pizza_List = require('../Pizza_List');
+
+var API = require('./API');
+
+//var Pizza_List = require('../Pizza_List');
+var Pizza_List = [];
 
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
@@ -51,6 +55,7 @@ function filterPizza(filter) {
         });
 
         $(".pizza-count").text("8");
+        $(".count-tile").text("Усі піци");
     }
 
 
@@ -61,6 +66,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("М'ясні піци");
 
     }
     if(filter=== pizzaFilter.pineApple){
@@ -69,6 +75,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з ананасами");
     }
     if(filter=== pizzaFilter.mushrooms){
         Pizza_List.forEach(function(pizza){
@@ -76,6 +83,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з грибами");
     }
     if(filter=== pizzaFilter.ocean){
         Pizza_List.forEach(function(pizza){
@@ -83,6 +91,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Піци з морепродуктами");
     }
     if(filter=== pizzaFilter.vega){
         Pizza_List.forEach(function(pizza){
@@ -90,6 +99,7 @@ function filterPizza(filter) {
                 pizza_shown.push(pizza);
             }
         });
+        $(".count-tile").text("Вегетеріанські піци");
     }
     showPizzaList(pizza_shown);
     $(".pizza-count").text(pizza_shown.length);
@@ -106,8 +116,20 @@ $(".nav-pills li").on("click", function(){
 
 function initialiseMenu() {
     //Показуємо усі піци
-    showPizzaList(Pizza_List)
+
+    API.getPizzaList(function(err,list ){
+       if(err){
+           alert("Can't load page.")
+       }else{
+           Pizza_List = list;
+           showPizzaList(Pizza_List)
+       }
+
+    });
+
+
 }
+
 
 exports.filterPizza = filterPizza;
 exports.initialiseMenu = initialiseMenu;

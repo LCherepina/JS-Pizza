@@ -1,0 +1,180 @@
+<% include common/header.ejs %>
+
+<div class="discount-panel">
+    <div class="discount-title">
+        Цього тижня<br> на все
+    </div>
+    <div class="discount-text">
+        -20%
+    </div>
+    <img class="discount" src="assets/images/discount.svg">
+</div>
+
+<div class="container-fluid">
+    <div class="row row-1">
+        <div class="navbar navbar-fixed-top top-panel" >
+
+            <div class="site-icon">
+                <div class="discount-before top-discount">
+                </div>
+                <a class="pizza-logo"  href="#">
+
+                    <div id="pizza-title2" class="title-1">
+                        Pizza
+                    </div>
+                    <div class="title-2">
+                        KMA
+                    </div>
+
+                </a>
+                <img class="discount" src="assets/images/discount.svg">
+            </div>
+
+            <div class="header-top-row">
+
+                <div class="main-header-top-items">
+                    <div class="main-header-top-item phone-number visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
+                        (044) 222 5 222
+                    </div>
+                    <div class="main-header-top-item work-days visible-lg-inline-block visible-md-inline-block">
+                        24 години/ 7 днів на тиждень
+                    </div>
+                    <div class="main-header-top-item delivery visible-lg-inline-block">
+                        Безкоштовна доставка піци
+                    </div>
+                    <div type="button" class="main-header-top-item btn btn-warning sign-in-button">
+                        Ввійти
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-down-row">
+                <span class=" pizza-page" style="color:white;">
+                    <a href="/index.html" style="color:white;" class="hidden-xs">Піца</a> &nbsp;
+                </span>
+            </div>
+        </div>
+        <div class="left-panel">
+            <div class="contact-form-1">
+                <div class="form-description-1">
+                    1. Контактні дані
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <form class="form-horizontal">
+                            <div class="form-group name-group">
+                                <label class="col-sm-2 control-label">Ім’я</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="inputName" placeholder="Ім’я Прізвище">
+                                </div>
+                                <span class="name-help-block" style="display:none">
+                                <!--Введіть тільки власне ім’я, без цифр-->
+                            </span>
+                            </div>
+                            <div class="form-group phone-group">
+                                <label class="col-sm-2 control-label">Телефон</label>
+                                <div class="col-sm-10">
+                                    <input  class="form-control" type="text" id="inputPhone" placeholder="+380991111111">
+                                </div>
+                                <span class="phone-help-block" style="display:none">
+                                <!--Введіть номер телефону у форматі +380 або почніть з 0-->
+                            </span>
+                            </div>
+                            <div class="form-group address-group">
+                                <label class="col-sm-2 control-label">Адреса</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="inputAdress" placeholder="Київ, вул. Спаська, 2">
+                                </div>
+                                <span class="address-help-block" style="display:none">
+                                <!--Введіть адресу доставки піци-->
+                            </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 order-summary">
+                        <div class=" bs-callout bs-callout-warning">
+                            <h4>Інформація про замовлення</h4>
+                            <p class="order-summery-time">
+                                <b>Приблизний час доставки:</b> невідомий
+                            </p>
+                            <p class="order-summery-adress">
+                                <b>Адреса доставки:</b> невідома
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group next-step-wrap">
+                        <div class="next-step-width">
+                            <button  type="button" class="btn btn-warning btn-block next-step-button">
+                                Далі
+                                <i class="glyphicon glyphicon-chevron-right icon-white">
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="google-maps" id="map"></div>
+                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10160.786088179706!2d30.495987149999998!3d50.45606505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1512387062763" width="900" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+
+            <script>
+                function initMap() {
+                    var uluru = {lat: 50.464379, lng: 30.51913};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 13,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map,
+                        icon: "assets/images/map-icon.png"
+                    });
+                }
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU33aMZVTVj-ZsoKk2nWxmiX-fALonYV4&callback=initMap">
+            </script>
+            <!--<script type="text/javascript">-->
+<!--//            &lt;!&ndash;<script async defer>&ndash;&gt;-->
+                <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU33aMZVTVj-ZsoKk2nWxmiX-fALonYV4&callback=initialize"-->
+            <!--</script>-->
+
+        </div>
+        <div class="right-panel">
+            <div class="r1">
+                <span class="order-list-title">
+                    Замовлення
+                    <span class="badge orange orders-count-span">0</span>
+                </span>
+
+
+            </div>
+            <div class="all-orders r2">
+
+                <div id="cart">
+
+                </div>
+            </div>
+
+            <div class="order-state r3">
+                <span class="sum-title">
+                        Сума замовлення
+                    </span>
+                <span class="sum-number"></span>
+                <div class="do-order-button">
+                    <!--disabled="disabled"-->
+                    <!--<a class="btn btn-warning btn-lg btn block button-order" role="button">-->
+                    <button class="btn btn-default btn-lg btn-block button-order" >
+                        Редагувати замовлення
+                    </button>
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% include common/footer.ejs %>

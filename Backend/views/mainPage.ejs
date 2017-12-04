@@ -1,7 +1,141 @@
 <% include common/header.ejs %>
 
-<div class="">
-    Main Page Content
+<div class="discount-panel">
+    <div class="discount-title">
+        Цього тижня<br> на все
+    </div>
+    <div class="discount-text">
+        -20%
+    </div>
+    <img class="discount" src="assets/images/discount.svg">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="navbar navbar-fixed-top top-panel" >
+
+            <div class="site-icon">
+                <div class="discount-before top-discount">
+                </div>
+                <a class="pizza-logo"  href="#">
+
+                    <div id="pizza-title2" class="title-1">
+                        Pizza
+                    </div>
+                    <div class="title-2">
+                        KMA
+                    </div>
+
+                </a>
+                <img class="discount" src="assets/images/discount.svg">
+            </div>
+
+            <div class="header-top-row">
+
+                <div class="main-header-top-items">
+                    <div class="main-header-top-item phone-number visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
+                        (044) 222 5 222
+                    </div>
+                    <div class="main-header-top-item work-days visible-lg-inline-block visible-md-inline-block">
+                        24 години/ 7 днів на тиждень
+                    </div>
+                    <div class="main-header-top-item delivery visible-lg-inline-block">
+                        Безкоштовна доставка піци
+                    </div>
+                    <div type="button" class="main-header-top-item btn btn-warning sign-in-button">
+                        Ввійти
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-down-row">
+                <span class=" pizza-page" style="color:white;">
+                    <a href="/index.html" style="color:white;" class="hidden-xs">Піца</a> &nbsp;
+                </span>
+            </div>
+        </div>
+        <div class="left-panel">
+            <div class="page-title">
+                <h2>
+                    <span class="count-tile">Усі піци</span>
+                    <span class="badge orange pizza-count">8</span>
+                </h2>
+            </div>
+            <div class="all-pizza-type-wrap">
+                <ul class="nav nav-pills all-pizza-type">
+                    <li role="presentation" class="active pizza-filter-button" id="all-pizza">
+                        <a href="#">
+                            Усі
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button"  id="meat-pizza">
+                        <a href="#">
+                            Мясні
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="pineapples-pizza">
+                        <a href="#">
+                            З ананасами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="mushrooms-pizza">
+                        <a href="#">
+                            З грибами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="ocean-pizza">
+                        <a href="#">
+                            З морепродуктами
+                        </a>
+                    </li>
+                    <li role="presentation" class="pizza-filter-button" id="tomato-pizza">
+                        <a href="#">
+                            Вега
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" id="pizza_list">
+
+
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="r1">
+                <span class="order-list-title">
+                    Замовлення
+                    <span class="badge orange orders-count-span">0</span>
+                </span>
+                <!--<button class="btn btn-default clear-order"> Очистити замовлення</button>-->
+                <span class="clear-cart">Очистити замовлення</span>
+
+            </div>
+            <div class="all-orders r2">
+                <div class="back-badge">
+
+                </div>
+                <div id="cart">
+
+                </div>
+            </div>
+
+            <div class="order-state r3">
+                <span class="sum-title">
+                        Сума замовлення
+                    </span>
+                <span class="sum-number"></span>
+                <div class="do-order-button">
+                    <!--disabled="disabled"-->
+                    <!--<a class="btn btn-warning btn-lg btn block button-order" role="button">-->
+                    <button class="btn btn-warning btn-lg btn-block button-order" >
+                        Замовити
+                    </button>
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <% include common/footer.ejs %>

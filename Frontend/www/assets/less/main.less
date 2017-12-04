@@ -2,11 +2,38 @@
 
 @import "pizza/pizza-card";
 
-.container{
+.container-fluid{
   background: #fffff5;
   width:100%;
   height:100%;
   padding-top: 80px;
+  .row-1{
+    padding-top: 70px;
+    .contact-form-1{
+      .form-description-1{
+        font-size: 20px;
+        padding-bottom: 10px;
+      }
+
+      .order-summary{
+        background: white;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-left-color: #ec890e;
+      }
+
+      .next-step-width{
+        float: right;
+        margin: 15px;
+        width: 110px;
+      }
+    }
+    .google-maps{
+      height: 250px;
+      width: 100%;
+    }
+  }
   .top-panel{
     width:100%;
     position: fixed;
@@ -56,6 +83,7 @@
 
   }
   .left-panel {
+    //background: #fffff5;
     margin: auto;
     padding-left: 30px;
     padding-right: 360px;
@@ -132,6 +160,13 @@
       margin-top: 15px;
       background-color: #F5F5F5;
       overflow: auto;
+      //.back-badge{
+      //  font-size: 16px;
+      //  color: #4e4e4e;
+      //  text-align: center;
+      //  padding-top: 50px;
+      //
+      //}
       .order{
         height: 120px;
         padding: 20px 61px 10px 24px;
@@ -217,7 +252,7 @@
           padding-right: 30px;
           margin-bottom: 15px;
         }
-        .do-order-button {
+        .create-order {
           padding: 20px;
         }
       }
@@ -287,4 +322,12 @@
 
 .price-box{
   font-weight: bold;
+}
+.footer{
+  text-align: center;
+  padding: 40px;
+  color: grey;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  padding-right: 330px;
 }

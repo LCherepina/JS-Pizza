@@ -3,7 +3,9 @@
  */
 var Templates = require('../Templates');
 
-var Storage = require('./Storage')
+var Storage = require('./Storage');
+
+var API = require('../API');
 
 //Перелік розмірів піци
 var PizzaSize = {
@@ -72,9 +74,10 @@ function initialiseCart() {
     //TODO: ...
 
     var saved_cart = Storage.read("cart");
-    if(saved_cart){
-        Cart=saved_cart;
+    if(saved_cart) {
+        Cart = saved_cart;
     }
+
     updateCart();
 }
 
@@ -91,8 +94,9 @@ function updateCart() {
     $cart.html("");
 
     var total =0;
-    var amount = ;
+    var amount = Cart.length;
     //Онволення однієї піци
+
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
 
@@ -129,8 +133,28 @@ function updateCart() {
     }
 
     Cart.forEach(showOnePizzaInCart);
+
+    // if(Cart.length=0){
+    //     $(".back-badge").text("Пусто в холодильнику?Замовте піцу!");
+    // }
     $(".sum-number").text(total + " грн");
+    $(".orders-count-span").text(amount);
 }
+
+function createOrder(callback){
+    API.createOrder({
+        name: "Client name",
+        phone: "5986405654",
+        order: Cart
+    }, function(err, result){
+        if(err){
+            return callback(err);
+        }
+        callback(null, result);
+    });
+
+}
+
 
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;
@@ -141,3 +165,5 @@ exports.initialiseCart = initialiseCart;
 exports.clearCart = clearCart;
 
 exports.PizzaSize = PizzaSize;
+
+exports.createOrder = createOrder;
