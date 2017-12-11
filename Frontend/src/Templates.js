@@ -9,5 +9,5 @@ exports.PizzaMenu_OneItem = ejs.compile(fs.readFileSync('./Frontend/templates/Pi
 
 exports.PizzaCart_OneItem = ejs.compile(fs.readFileSync('./Frontend/templates/PizzaCart_OneItem.ejs', "utf8"));
 
-// exports.PizzaCart = ejs.compile(fs.readFileSync('./Frontend/templates/PizzaCart.ejs', "utf8"));
+exports.PizzaCart_submit = ejs.compile(fs.readFileSync('./Frontend/templates/PizzaCart_submit.ejs', "utf8"));
 

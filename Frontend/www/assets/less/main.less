@@ -9,7 +9,7 @@
   padding-top: 80px;
   .row-1{
     padding-top: 70px;
-    .contact-form-1{
+    .form{
       .form-description-1{
         font-size: 20px;
         padding-bottom: 10px;
@@ -21,6 +21,12 @@
         border: 1px solid #eee;
         border-left-width: 5px;
         border-left-color: #ec890e;
+        .order-time{
+          //font-weight: bold;
+        }
+        .order-address{
+          //font-weight: bold;
+        }
       }
 
       .next-step-width{
@@ -32,6 +38,7 @@
     .google-maps{
       height: 250px;
       width: 100%;
+      margin-bottom: 30px;
     }
   }
   .top-panel{
@@ -167,6 +174,11 @@
       //  padding-top: 50px;
       //
       //}
+      .back-badge{
+        padding-top: 50px;
+        font-size: 16px;
+        text-align: center;
+      }
       .order{
         height: 120px;
         padding: 20px 61px 10px 24px;
@@ -243,17 +255,16 @@
         .sum-title {
           font-weight: 700;
           font-size: 15px;
-          margin-bottom: 15px;
+
         }
         .sum-number {
           font-weight: 700;
           font-size: 20px;
           float: right;
           padding-right: 30px;
-          margin-bottom: 15px;
         }
-        .create-order {
-          padding: 20px;
+        .button-order {
+          margin-top: 15px;
         }
       }
 
@@ -323,6 +334,9 @@
 .price-box{
   font-weight: bold;
 }
+.price-box-order{
+  font-weight: bold;
+}
 .footer{
   text-align: center;
   padding: 40px;
@@ -330,4 +344,19 @@
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
   padding-right: 330px;
+}
+.name-help-block {
+  margin-left: 100px;
+  color: red;
+}
+.phone-help-block {
+  margin-left: 100px;
+  color: red;
+}
+.address-help-block{
+  margin-left: 100px;
+  color: red;
+}
+.pizza-card{
+  min-width: 300px;
 }

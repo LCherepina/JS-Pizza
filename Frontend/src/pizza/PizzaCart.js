@@ -25,7 +25,7 @@ function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
     var wasAdded = false;
     for(var i=0; i<Cart.length; i++) {
-        if (Cart[i].pizza == pizza && Cart[i].size == size) {
+        if (Cart[i].pizza.id == pizza.id && Cart[i].size == size) {
             Cart[i].quantity += 1;
 
             wasAdded = true;
@@ -53,7 +53,7 @@ function removeFromCart(cart_item) {
     //Видалити піцу з кошика
    // alert();
     for(var i=0; i<Cart.length; i++){
-        if(Cart[i]==cart_item) {
+        if(Cart[i].id==cart_item.id) {
             Cart.splice(i, 1);
             break;
         }
@@ -93,8 +93,9 @@ function updateCart() {
     //Очищаємо старі піци в кошику
     $cart.html("");
 
-    var total =0;
+    var total = 0;
     var amount = Cart.length;
+
     //Онволення однієї піци
 
     function showOnePizzaInCart(cart_item) {
@@ -103,11 +104,12 @@ function updateCart() {
         var pizza = cart_item.pizza;
         var size = cart_item.size;
 
-        total += pizza[size].price*cart_item.quantity;
+        total += pizza[size].price * cart_item.quantity;
 
         var $node = $(html_code);
 
-        $node.find(".plus").click(function(){
+
+        $node.find(".plus").click(function () {
             //Збільшуємо кількість замовлених піц
             cart_item.quantity += 1;
             //Оновлюємо відображення
@@ -116,7 +118,7 @@ function updateCart() {
 
         $node.find(".minus").click(function () {
             cart_item.quantity -= 1;
-            if(cart_item.quantity==0) {
+            if (cart_item.quantity == 0) {
                 removeFromCart(cart_item);
 
             }
@@ -134,26 +136,37 @@ function updateCart() {
 
     Cart.forEach(showOnePizzaInCart);
 
-    // if(Cart.length=0){
-    //     $(".back-badge").text("Пусто в холодильнику?Замовте піцу!");
-    // }
-    $(".sum-number").text(total + " грн");
-    $(".orders-count-span").text(amount);
+    if (Cart.length == 0) {
+        $(".back-badge").attr('hidden', false);
+        $(".sum-title").attr('hidden', true);
+        $(".button-order").prop('disabled', true);
+        $(".sum-number").attr('hidden', true);
+        $(".orders-count-span").text(amount);
+    }
+    else {
+        $(".back-badge").attr('hidden', true);
+        $(".sum-title").attr('hidden', false);
+        $(".sum-title").text("Сума замовлення");
+        $(".sum-number").attr('hidden', false);
+        $(".sum-number").text(total + " грн");
+        $(".orders-count-span").text(amount);
+        $(".button-order").prop('disabled', false);
+    }
+    if(window.location == "http://localhost:5050/order.html"){
+
+        $('.price-box').attr('hidden', true);
+        $('.price-box-order').attr('hidden', false);
+    }else{
+        $('.price-box').attr('hidden', false);
+        $('.price-box-order').attr('hidden', true);
+    }
+
+
 }
 
-function createOrder(callback){
-    API.createOrder({
-        name: "Client name",
-        phone: "5986405654",
-        order: Cart
-    }, function(err, result){
-        if(err){
-            return callback(err);
-        }
-        callback(null, result);
-    });
 
-}
+
+
 
 
 exports.removeFromCart = removeFromCart;
@@ -166,4 +179,4 @@ exports.clearCart = clearCart;
 
 exports.PizzaSize = PizzaSize;
 
-exports.createOrder = createOrder;
+//exports.createOrder = createOrder;

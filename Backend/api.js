@@ -18,3 +18,6 @@ exports.createOrder = function(req, res) {
 
     });
 };
+//private kluch, base64, sha1, вар ордер, вар дата, сигантюр, var data: data, var signature: signature
+//var description передать
+//
